@@ -6,7 +6,7 @@ namespace Domain.Users
     {
         private User(Guid id, Name name) : base(id)
         {
-            name = name;
+            Name = name;
         }
         public Name Name { get; private set; }
     }
