@@ -2,8 +2,20 @@
 {
     public abstract class Entity
     {
-        protected Entity() { }
+        private readonly List<IDomainEvent> _domainEvents = new();
+        protected Entity(Guid id) 
+        {
+            id = id;
+        }
 
+        public Guid Id { get; init; }
+
+        public List<IDomainEvent> DomainEvents => _domainEvents.ToList();
+
+        protected void Raise(IDomainEvent domainEvent)
+        {
+            _domainEvents.Add(domainEvent);
+        }
 
     }
 }
