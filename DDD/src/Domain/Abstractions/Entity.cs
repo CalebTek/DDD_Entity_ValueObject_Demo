@@ -1,6 +1,9 @@
 ﻿namespace Domain.Abstractions
 {
-    public class Entity
+    public abstract class Entity
     {
+        protected Entity() { }
+
+
     }
 }
