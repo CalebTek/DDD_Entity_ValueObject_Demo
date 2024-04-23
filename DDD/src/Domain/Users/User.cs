@@ -2,7 +2,7 @@
 
 namespace Domain.Users
 {
-    public class User : Entity
+    public sealed class User : Entity
     {
         private User(Guid id, Name name) : base(id)
         {
