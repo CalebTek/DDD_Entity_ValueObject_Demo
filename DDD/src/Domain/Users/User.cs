@@ -9,5 +9,11 @@ namespace Domain.Users
             Name = name;
         }
         public Name Name { get; private set; }
+
+        public static User Create( Name name)
+        {
+            var user = new User(Guid.NewGuid(), name);
+            return user;
+        }
     }
 }
