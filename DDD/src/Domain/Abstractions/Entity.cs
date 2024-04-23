@@ -5,7 +5,7 @@
         private readonly List<IDomainEvent> _domainEvents = new();
         protected Entity(Guid id) 
         {
-            id = id;
+            Id = id;
         }
 
         public Guid Id { get; init; }
