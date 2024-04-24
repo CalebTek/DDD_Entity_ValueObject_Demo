@@ -13,6 +13,7 @@ namespace Domain.Users
         public static User Create( Name name)
         {
             var user = new User(Guid.NewGuid(), name);
+            user.Raise( new UserCreatedDomainEvent(user.Id));
             return user;
         }
     }
