@@ -17,5 +17,19 @@ namespace Domain.UnitTests.Users
             // Assert
             user.Should().NotBeNull();
         }
+
+        [Fact]
+        public void Create_Should_RaiseDomainEvent_WhenNameIsIvalid()
+        {
+            // Arrange
+            var name = new Name("John Doe");
+
+            // Act
+            var user = User.Create(name);
+
+            // Assert
+            user.DomainEvents.Should().ContainSingle()
+                .Which.Should().BeOfType<UserCreatedDomainEvent>();
+        }
     }
 }
